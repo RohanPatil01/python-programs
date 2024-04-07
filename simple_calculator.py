@@ -1,10 +1,11 @@
-result = 0  # Initialize result outside the loop
+result = float(input("Enter your number: "))
 
 while True:
-    num = float(input("Enter your number: "))
-
     operation = input("Enter your operator (+, -, *, /) or '=' to finish: ")
-
+    
+    if operation != "=":
+        num = float(input("Enter your number: "))
+    
     if operation == "+":
         result += num
     elif operation == "-":
