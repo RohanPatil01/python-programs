@@ -2,10 +2,16 @@ result = float(input("Enter your number: "))
 
 while True:
     operation = input("Enter your operator (+, -, *, /) or '=' to finish: ")
-    
-    if operation != "=":
-        num = float(input("Enter your number: "))
-    
+
+    if operation not in ["+", "-", "*", "/", "="]:
+        print("Only operators are allowed.")
+        break
+
+    if operation == "=":
+        break
+
+    num = float(input("Enter your number: "))
+
     if operation == "+":
         result += num
     elif operation == "-":
@@ -17,9 +23,5 @@ while True:
             print("Zero is not a valid divisor.")
         else:
             result /= num
-    elif operation == "=":
-        break
-    else:
-        print("Invalid input")
 
 print("Final result:", result)
